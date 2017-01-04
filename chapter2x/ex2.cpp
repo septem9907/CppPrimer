@@ -6,40 +6,43 @@ using namespace std;
 void GetPentagonalSeries(vector<int> &vec)
 {
     // check
-    threshold = 50;
-    if vec.size() > threshold
+    int threshold = 50;
+    if (vec.size() > threshold)
     {
+        cout << "invalid input";
         return;
     }
 
-    double val;
-    
-    for (int i=0; i<vec.size(); ++i)
+    int val;
+
+    for (int i=0; i!=vec.size(); ++i)
     {
-        val = i * (3 * i - 1) / 2;
-        vec.push_back(val);
+        vec[i] = i * (3 * i - 1) / 2;
     }
 
     return;
 }
 
-void DispVec(const vector<int> &vec)
+void DispVec(vector<int> &vec)
 {
     for(int i=0; i<vec.size(); ++i)
     {
-        cout << "The " << i << " element is: "
-        cout << item << '\n';
+        cout << "The " << i << " element is: ";
+        cout << vec[i] << '\n';
     }
     return;
 }
 
 int main()
 {
-    vector<int> vec;
-    
+    vector<int> vec(10, 0);
+
     GetPentagonalSeries(vec);
-    
+
     DispVec(vec);
 
+    int a;
+    cin >> a;
+    
     return 0;
 }
